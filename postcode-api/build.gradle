@@ -1,0 +1,70 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.4.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'au.com.postcode'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    compile("io.prometheus:simpleclient_common:0.0.23")
+    compile("io.prometheus:simpleclient_hotspot:0.0.23")
+    compile("io.prometheus:simpleclient_servlet:0.0.23")
+    compile("io.prometheus:simpleclient_spring_boot:0.0.23")
+    compile 'org.springframework.metrics:spring-metrics:latest.release'
+    compileOnly 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+
+}
+
+
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion = '7.8.2'
+    showViolations = true
+    ignoreFailures = false
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+
+}
+
+checkstyleTest {
+    enabled = false
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        html.enabled = true
+    }
+}
+
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = '0.7.9'
+}
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        csv.enabled = false
+        html.enabled = true
+    }
+}
+check.dependsOn jacocoTestReport
+

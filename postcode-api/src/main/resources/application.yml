@@ -1,0 +1,22 @@
+---
+spring:
+  application:
+    name: Post Code API
+  profiles:
+    active: ${SPRING_PROFILE:development}
+  redis:
+    host: localhost
+    port: 6379
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: postal
+      #username:
+      #password:
+
+security:
+  user:
+    name: postCodeUser
+    password: $2a$04LptkSbK5m41LMk.e
+
