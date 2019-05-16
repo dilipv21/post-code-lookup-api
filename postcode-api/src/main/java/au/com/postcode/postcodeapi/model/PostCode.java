@@ -1,6 +1,7 @@
 package au.com.postcode.postcodeapi.model;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.Pattern;
 
 @Getter
 @Setter
+@Builder
 public class PostCode {
 
     //https://en.wikipedia.org/wiki/Postcodes_in_Australia

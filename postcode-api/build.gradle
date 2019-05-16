@@ -1,9 +1,11 @@
 plugins {
     id 'org.springframework.boot' version '1.5.4.RELEASE'
     id 'java'
+    id 'org.asciidoctor.convert' version '1.5.7'
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply from: 'spring-rest-docs.gradle'
 
 group = 'au.com.postcode'
 version = '0.0.1-SNAPSHOT'
