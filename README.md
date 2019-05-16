@@ -5,7 +5,7 @@ Post Code API - Provides ability for an end-user to search Postal Code, Suburb a
 
 
 
-###Get Suburb:
+### Get Suburb:
 
  REST endpoint retrieves the Suburb details for a Postal Code.
  Validation: Postal Code Should be valid Number, and between 0200 to 7999.
@@ -21,7 +21,7 @@ Post Code API - Provides ability for an end-user to search Postal Code, Suburb a
     curl -u username http://localhost:8080/postcode/code/3000
 ```
 
-###Get PostCode:
+### Get PostCode:
 
 REST endpoint retrieves the Postal details for a Given Suburb.
 
@@ -32,11 +32,11 @@ REST endpoint retrieves the Postal details for a Given Suburb.
 **Request:**
 
 ```$bash
-    curl -u username http://localhost:8080/postcode/code/3000
+    curl -u username http://localhost:8080/postcode/suburb/melbourne
 ```
 
 
-###Save PostCode Details
+### Save PostCode Details
 
 REST endpoint saves the Postal details.
 
