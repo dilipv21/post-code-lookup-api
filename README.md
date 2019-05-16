@@ -76,7 +76,7 @@ using [Gradle](https://gradle.org/).
 
 
 
-##Operation Support
+## Operation Support
 
 [Prometheus](https://prometheus.io/) to provide the Operational Insights of the Application.
 
